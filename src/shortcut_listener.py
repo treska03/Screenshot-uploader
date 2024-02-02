@@ -1,25 +1,10 @@
-import json
-from exceptions import CorruptedConfigFileError
+from config_handler import Config_handler
 from pynput import keyboard
 
 class Keyboard_listener:
 
     def __init__(self):
-        self._shortcuts = set()
-        self._unpack_config()
-
-    def _unpack_config(self):
-        try:
-            with open("config.json", "r") as json_file:
-                json_data = json.load(json_file)
-                
-                if not "shortcut_keys" in json_data.keys():
-                    raise CorruptedConfigFileError("Config file incorrectly formatted")
-                
-                self._shortcuts = set(json_data["shortcut_keys"])
-        except FileNotFoundError:
-            raise CorruptedConfigFileError("Config file does not exist or exists in incorrect place")
-
+        self._shortcuts = Config_handler.get_shortcuts()
 
     def _on_hotkey_activate(self):
         self.l.stop()
