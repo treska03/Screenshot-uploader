@@ -1,6 +1,6 @@
 import json
 
-from util.exceptions import CorruptedConfigFileError
+from src.main.util.exceptions import CorruptedConfigFileError
 
 class Config_handler:
 

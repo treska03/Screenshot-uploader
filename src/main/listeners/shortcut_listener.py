@@ -1,4 +1,4 @@
-from util.config_handler import Config_handler
+from src.main.util.config_handler import Config_handler
 from pynput import keyboard
 
 class Keyboard_listener:
