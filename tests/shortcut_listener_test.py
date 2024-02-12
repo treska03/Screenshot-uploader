@@ -1,5 +1,5 @@
 import unittest
-from src.shortcut_listener import Keyboard_listener
+from src.listeners.shortcut_listener import Keyboard_listener
 
 listener = Keyboard_listener()
 
