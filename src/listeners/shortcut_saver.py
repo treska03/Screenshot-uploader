@@ -1,6 +1,6 @@
 from pynput import keyboard
 
-from config_handler import Config_handler
+from util.config_handler import Config_handler
 
 class Shortcut_saver:
 

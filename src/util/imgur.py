@@ -1,5 +1,5 @@
 import requests
-from exceptions import InvalidScreenshotException
+from util.exceptions import InvalidScreenshotException
 
 class API_Handler:
 

@@ -1,6 +1,6 @@
 import json
 
-from exceptions import CorruptedConfigFileError
+from util.exceptions import CorruptedConfigFileError
 
 class Config_handler:
 
@@ -10,9 +10,10 @@ class Config_handler:
             config.write(json.dumps(data, indent=4))
 
     @staticmethod
-    def _load_file():
+    def _load_file(path="config.json"):
         try:
-            return json.loads("config.json")
+            with open(path, "r") as f:
+                return json.loads(f.read())
         except FileNotFoundError:
             raise FileNotFoundError("config.json does not exist in the main directory")
             
