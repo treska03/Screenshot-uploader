@@ -12,7 +12,7 @@ class Keyboard_listener:
     def _for_canonical(self, f):
         return lambda k: f(str(self.l.canonical(k)))
 
-    def listen(self):
+    def await_hotkey(self):
         hotkey = keyboard.HotKey(
             self._shortcuts, self._on_hotkey_activate
         )
